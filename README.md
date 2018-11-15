@@ -1,3 +1,6 @@
+[![Coverage Status](https://coveralls.io/repos/github/OnyiegoAyub/SENDIT-API/badge.svg?branch=api)](https://coveralls.io/github/OnyiegoAyub/SENDIT-API?branch=api)
+[![Build Status](https://travis-ci.org/OnyiegoAyub/SENDIT-API.svg?branch=Bg-bug-fixes-161984113)](https://travis-ci.org/OnyiegoAyub/SENDIT-API)
+
 # BUILD A PRODUCT: SendIT
 
 ## Project Overview
