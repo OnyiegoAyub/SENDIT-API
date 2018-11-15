@@ -36,13 +36,7 @@ class TestParcelCase(unittest.TestCase):
     response = self.app.get('api/v1/parcels/1')
     self.assertEqual(response.status_code, 200)
 
-  def test_create_user(self):
-    response = self.app.post('/api/v1/users', data=json.dumps(self.data), content_type='application/json')
-    self.assertEqual(response.status_code, 201)
-
-  def test_get_all_users(self):
-    response = self.app.get('api/v1/users')
-    self.assertEqual(response.status_code, 200)
+  
 
 if __name__ == '__main__':
   unittest.main()
