@@ -1,13 +1,6 @@
 
 class User:
-    users = [{
-        "user_id": 1,
-        "username": "Ayub",
-        "role": "Admin",
-        "email": "ayub@gmail.com",
-        "password": "ayub"
-
-    }]
+    users = []
 
     def create(self, username, role, email, password):
         new_user = {"user_id": len(User.users) + 1,

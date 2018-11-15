@@ -1,32 +1,8 @@
 class Parcel:
 
-	parcels = [
-        {
-            "parcel_id": 1,
-            "user_id": 1,
-            "origin": "Eldoret",
-            "destination": "Kitale",
-            "weight": 5,
-            "status": "pending delivery"
-        },
-        {
-            "parcel_id": 2,
-            "user_id": 1,
-            "origin": "Nairobi",
-            "destination": "Mombasa",
-            "weight": "1",
-            "status": "pending delivery"
-        }
-	]
+	parcels = []
 
-	users = [{
-	"user_id": 1,
-    "username": "Ayub",
-    "role": "Admin",
-    "email": "ayub@gmail.com",
-    "password": "ayub"
-
-}]
+	users = []
 
 	def create(self, origin, destination, weight, status):
 		parcel = {
@@ -59,7 +35,7 @@ class Parcel:
 				parcel['status'] == "Cancelled"
 				return parcel
 			return False
-			
+
 	def get_order_by_user(self, user_id):
 		for user in Parcel.parcels:
 			if user["user_id"] == user_id:
