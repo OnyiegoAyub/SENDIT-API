@@ -2,6 +2,7 @@
 it gets a copy of the app package and runs """
 
 
+<<<<<<< Updated upstream
 from flask import Flask, Blueprint, make_response, jsonify
 
 from .api.v1 import blueprint_version1
@@ -35,3 +36,6 @@ def create_app():
 
 
 	return app
+=======
+app = create_app()
+>>>>>>> Stashed changes
