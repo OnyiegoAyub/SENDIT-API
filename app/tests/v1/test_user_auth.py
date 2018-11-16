@@ -6,7 +6,7 @@ from app import create_app
 
 class TestUserCase(unittest.TestCase):
 
-  def setUp(self): 
+  def setUp(self):
 
     create_app().testing = True #???
     '''create an instance of a flask application just as you would create  a flask app, but in this case you pass to it a test client which means you are running a test instance'''
@@ -21,8 +21,14 @@ class TestUserCase(unittest.TestCase):
     }
 
   def test_create_user(self):
-    response = self.app.post('/api/v1/users', data=json.dumps(self.data), content_type='application/json') 
+    response = self.app.post('/api/v1/users', data=json.dumps(self.data), content_type='application/json')
+    results = json.loads(response.data.decode())
     self.assertEqual(response.status_code, 201)
+
+  def test_create_user_success_message(self):
+    response = self.app.post('/api/v1/users', data=json.dumps(self.data), content_type='application/json')
+    results = json.loads(response.data.decode())
+    self.assertEqual(results['message'], 'success')
 
   def test_get_all_users(self):
     response = self.app.get('api/v1/users')
@@ -31,6 +37,12 @@ class TestUserCase(unittest.TestCase):
   def test_get_single_user(self):
     response = self.app.get('api/v1/users/1')
     self.assertEqual(response.status_code, 200)
+
+  def test_get_user_not_registered(self):
+    response = self.app.get('api/v1/users/1')
+    """Test cannot get a non registerd user."""
+    results = json.loads(response.data.decode())
+    self.assertEqual(results['status'], 'Requested user does not exist')
 
 
 

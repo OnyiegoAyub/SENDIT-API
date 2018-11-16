@@ -5,14 +5,7 @@ from flask_restful import Resource
 # internal import
 from ..models.user_models import User
 
-users = [{
-    "user_id":1,
-    "username": "Ayub",
-    "role": "Admin",
-    "email": "ayub@gmail.com",
-    "password": "ayub"
-
-}]
+users = []
 
 class AllUsers(Resource, User):
 
@@ -50,5 +43,4 @@ class SingleUser(Resource, User):
             return make_response(jsonify(
             {"status": "ok", "User": one_user}), 200)
         return make_response(jsonify(
-            {"status": "Not Found"}), 404)
-
+            {"status": "Requested user does not exist"}), 404)
