@@ -40,7 +40,7 @@ class SingleOrder(Resource, Parcel):
             return make_response(jsonify(
             {"status": "ok", "order": one_order}), 200)
         return make_response(jsonify(
-            {"status": "Not Found"}), 404)
+            {"status": " Parcel order requested not Found"}), 404)
 
 
 class CancelOrder(Resource, Parcel):
