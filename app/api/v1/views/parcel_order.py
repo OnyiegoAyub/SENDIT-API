@@ -40,7 +40,7 @@ class SingleOrder(Resource, Parcel):
             return make_response(jsonify(
             {"status": "ok", "order": one_order}), 200)
         return make_response(jsonify(
-            {"status": "Not Found"}), 404)
+            {"status": " Order not found"}), 404)
 
 
 class CancelOrder(Resource, Parcel):
@@ -54,11 +54,11 @@ class CancelOrder(Resource, Parcel):
 
         if change is not False:
             return make_response(jsonify(
-                {"Message": "success", "Order": change, "status": "Accepted"}), 202)
+                {"Message": " cancelled successfully", "Order": change, "status": "Accepted"}), 202)
 
         return make_response(jsonify(
                 {"Message": "The order requested does not exist",
-                 "status": "Not Found"}), 404)
+                 "status": " Order to be cancelled not found"}), 404)
 class UserOrders(Resource, Parcel):
     def get(self, user_id):
         user_order = self.get_order_by_user(user_id)
@@ -66,4 +66,4 @@ class UserOrders(Resource, Parcel):
             return make_response(jsonify(
             {"status": "ok", "order": user_order}), 200)
         return make_response(jsonify(
-            {"status": "Not Found"}), 404)
+            {"status": "Uer order requested not found"}), 404)
