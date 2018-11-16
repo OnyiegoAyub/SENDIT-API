@@ -26,7 +26,7 @@ class CreateOrders(Resource, Parcel):
                                )
 
         return make_response(jsonify(
-            {"message": "success"}), 201)
+            {"message": "Order created"}), 201)
 
 
 class SingleOrder(Resource, Parcel):
