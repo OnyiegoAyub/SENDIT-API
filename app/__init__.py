@@ -2,7 +2,7 @@
 
 """Instance of Flask application"""
 
-# from instance.config import Config
+from instance.config import Config
 from flask import Flask, Blueprint, make_response, jsonify
 from .api.v1 import blueprint_version1
 

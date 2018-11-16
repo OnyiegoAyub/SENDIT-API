@@ -4,4 +4,4 @@ class Config(object):
     SECRET_KEY = os.environ.get("SECRET_KEY") or 'rakeli-key'
 
 class TestingConfig(Config):
-DEBUG = True
+    DEBUG = True
