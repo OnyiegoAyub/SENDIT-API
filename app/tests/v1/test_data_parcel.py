@@ -5,11 +5,11 @@ from app import create_app
 
 class TestParcelCase(unittest.TestCase):
 
-  def setUp(self): #???
+  def setUp(self):
 
-    create_app().testing = True #???
+    create_app().testing = True
     '''create an instance of a flask application just as you would create  a flask app, but in this case you pass to it a test client which means you are running a test instance'''
-    self.app = create_app().test_client() #???
+    self.app = create_app().test_client()
     self.data = {
         "parcel_id": 1,
         "user_id": 1,
