@@ -29,7 +29,7 @@ class CreateUsers(Resource, User):
                                )
 
         return make_response(jsonify(
-            {"message": "success"}), 201)
+            {"message": "Successfully created account"}), 201)
 
 
 class SingleUser(Resource, User):
@@ -43,4 +43,4 @@ class SingleUser(Resource, User):
             return make_response(jsonify(
             {"status": "ok", "User": one_user}), 200)
         return make_response(jsonify(
-            {"status": "Not Found"}), 404)
+            {"status": "Requested user does not exist"}), 404)
