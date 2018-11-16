@@ -1,32 +1,41 @@
-#serves as an entry point to our application
-#it gets a copy of the app package and runs it
+"""serves as an entry point to our application
+it gets a copy of the app package and runs """
 
-from app import create_app
 
+<<<<<<< Updated upstream
+from flask import Flask, Blueprint, make_response, jsonify
+
+from .api.v1 import blueprint_version1
+
+
+def page_not_found(e):
+
+  return make_response(jsonify(
+
+                {
+
+                    "Message": "url given not available in this server"
+
+                }), 404)
+
+
+
+
+def create_app():
+
+	""""initialize the app."""
+
+	app = Flask(__name__)
+
+
+
+	app.register_blueprint(blueprint_version1, url_prefix = "/api/v1")
+
+	app.register_error_handler(404, page_not_found)
+
+
+
+	return app
+=======
 app = create_app()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# '''single delivery order API'''
-	# def get(self, order_id):
-	# 	"""find an order by order_id and assign it to one_order"""
-	# 	"""call the get_one method from order models"""
-	# one_order = Parcels.get_one(self, order_id) # import from
-	# models(Parcels.get_one)
-
-		# return make_response(jsonify(
-    #   {"status": "ok",
-    #   "order": one_order}), 200)
-# order_id = self.order_id,
+>>>>>>> Stashed changes
