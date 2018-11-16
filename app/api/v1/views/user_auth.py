@@ -43,4 +43,3 @@ class SingleUser(Resource, User):
             return make_response(jsonify(
             {"status": "ok", "User": one_user}), 200)
         return make_response(jsonify(
-            {"status": "Requested user does not exist"}), 404)

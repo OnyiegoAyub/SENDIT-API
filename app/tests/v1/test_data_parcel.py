@@ -44,10 +44,5 @@ class TestParcelCase(unittest.TestCase):
     """test that messageexpected is retuned"""
     # assert 'ok' in response
     """test for invalid request"""
-
-  """def test_get_users_orders(self):
-    response = self.app.get('api/v1/users/1/parcels')                                                                                       ')
-    self.assertEqual(response.status_code, 404)"""
-
 if __name__ == '__main__':
   unittest.main()
