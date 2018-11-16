@@ -25,10 +25,23 @@ class TestUserCase(unittest.TestCase):
       response = self.app.post('/api/v1/users', data=json.dumps(self.data), content_type='application/json')
       self.assertEqual(response.status_code, 201)
 
+    def test_create_user_success(self):
+      response = self.app.post('/api/v1/users', data=json.dumps(self.data), content_type='application/json')
+      results = json.loads(response.data.decode())
+      self.assertEqual(results['message', 'success'])
+
     def test_get_all_users(self):
       response = self.app.get('api/v1/users')
       self.assertEqual(response.status_code, 200)
 
+    def test_get_single_user(self):
+      response = self.app.get('api/v1/users/1')
+      self.assertEqual(response.status_code, 200)
+
+    def test_get_a_none_registered_user(self):
+      response = self.app.get('api/v1/users/1')
+      results = json.loads(response.data.decode())
+      self.assertEqual(response['status'], 'User does not exist')
 
 #   def test_create_user(self):
 #     response = self.app.post('/api/v1/users', data=json.dumps(self.data), content_type='application/json')
