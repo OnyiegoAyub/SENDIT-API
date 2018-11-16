@@ -1,5 +1,5 @@
 [![Coverage Status](https://coveralls.io/repos/github/OnyiegoAyub/SENDIT-API/badge.svg?branch=ch-tests-161986255)](https://coveralls.io/github/OnyiegoAyub/SENDIT-API?branch=ch-tests-161986255)
-[![Build Status](https://travis-ci.org/OnyiegoAyub/SENDIT-API.svg?branch=Bg-bug-fixes-161984113)](https://travis-ci.org/OnyiegoAyub/SENDIT-API)
+[![Build Status](https://travis-ci.org/OnyiegoAyub/SENDIT-API.svg?branch=ch-tests-161986255)](https://travis-ci.org/OnyiegoAyub/SENDIT-API)
 
 # BUILD A PRODUCT: SendIT
 
