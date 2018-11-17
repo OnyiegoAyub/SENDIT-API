@@ -21,12 +21,11 @@ class CreateUsers(Resource, User):
     def post(self):
         """posts an order"""
         data = request.get_json() or {}
-        orders = self.create(
-                               username=data['username'],
-                               role=data['role'],
-                               email=data['email'],
-                               password=data['password']
-                               )
+        parcel = self.create(
+            username=data['username'],
+            role=data['role'],
+            email=data['email'],
+            password=data['password'])
 
         return make_response(jsonify(
             {"message": "Successfully created account"}), 201)
@@ -37,10 +36,8 @@ class SingleUser(Resource, User):
 
     def get(self, user_id):
         """find an order by order_id and assign it destination one_order"""
-        """call the get_one method from order models"""
         one_user = self.get_one_users(user_id)
         if one_user is not False:
-            return make_response(jsonify(
-            {"status": "ok", "User": one_user}), 200)
+            return make_response(jsonify({"status": "ok", "User": one_user}), 200)
         return make_response(jsonify(
             {"status": "Requested user does not exist"}), 404)
