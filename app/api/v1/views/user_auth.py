@@ -21,7 +21,7 @@ class CreateUsers(Resource, User):
     def post(self):
         """posts an order"""
         data = request.get_json() or {}
-        parcel = self.create(
+        orders = self.create(
             username=data['username'],
             role=data['role'],
             email=data['email'],
