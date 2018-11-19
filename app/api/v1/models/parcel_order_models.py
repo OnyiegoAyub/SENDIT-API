@@ -1,43 +1,43 @@
+
+
 class Parcel:
+    """Create parcel class"""
+    users = []
+    parcels = []
 
-	parcels = []
+    def create(self, origin, destination, weight, status):
+        """Create new parcel delivery order"""
+        parcel = {"user_id": len(Parcel.parcels) + 1,
+                  "origin": origin, "parcel_id": len(Parcel.parcels) + 1,
+                  "destination": destination,
+                  "weight": weight,
+                  "status": status}
+        Parcel.parcels.append(parcel)
+        return parcel
 
-	users = []
+    def get_all(self):
+        """method calling all parcels"""
+        return Parcel.parcels
 
-	def create(self, origin, destination, weight, status):
-		parcel = {
-      		"parcel_id": len(Parcel.parcels) + 1,
-            "user_id": len(Parcel.parcels) + 1,
-            "origin": origin,
-            "destination": destination,
-            "weight": weight,
-			"status": status
-    	}
+    def get_one(self, parcel_id):
+        """method calling single parcel"""
+        for parcel in Parcel.parcels:
+            if parcel["parcel_id"] == parcel_id:
+                return parcel
 
-		Parcel.parcels.append(parcel)
+            return False
 
-		return parcel
+    def cancel_parcel_order(self, parcel_id):
+        """method cancelling a parcel order"""
+        for parcel in Parcel.parcels:
+            if parcel["parcel_id"] == parcel_id:
+                parcel['status'] == "Cancelled"
+                return parcel
+            return False
 
-  # method calling all parcels
-	def get_all(self):
-		return Parcel.parcels
-
-  # method calling one parcel
-	def get_one(self, parcel_id):
-		for parcel in Parcel.parcels:
-			if parcel["parcel_id"] == parcel_id:
-				return parcel
-			return False
-
-	def cancel_parcel_order(self, parcel_id):
-		for parcel in Parcel.parcels:
-			if parcel["parcel_id"] == parcel_id:
-				parcel['status'] == "Cancelled"
-				return parcel
-			return False
-
-	def get_order_by_user(self, user_id):
-		for user in Parcel.parcels:
-			if user["user_id"] == user_id:
-				return user
-			return False
+    def get_order_by_user(self, user_id):
+        """method for getting a user's parcel order"""
+        for user in Parcel.parcels:
+            if user["user_id"] == user_id:
+                return user
+            return False
